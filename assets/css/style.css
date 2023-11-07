@@ -2033,17 +2033,20 @@ textarea.input-field {
   padding-top: 0;
   padding-left: 0;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  margin: 10px;
+  gap: 10px;
+  margin: flex;
   align-items: center;
   grid-gap: 10px;
 }
 
 
+
+
 .grid > article {
   box-shadow: var(--shadow-1);
   border-radius: 20px;
-  margin-right: 10px;
+  margin-right: flex;
+  margin-left: auto;
   text-align: center;
   background: var(--bg-primary);
   /**width: 300px;**/
@@ -2070,6 +2073,54 @@ textarea.input-field {
 
 @media (max-width:768px) {
   .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-1{
+  display: grid;
+  position: relative;
+  justify-content: flex-start;
+  padding-top: 0;
+  padding-left: 0;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2,1fr));
+  gap: 20px;
+  margin: 10px;
+  align-items: center;
+  grid-gap: 10px;
+}
+
+.grid-1 > article {
+  box-shadow: var(--shadow-1);
+  border-radius: 20px;
+  margin-right: flex;
+  margin-left: auto;
+  text-align: center;
+  background: var(--bg-primary);
+  /**width: 300px;**/
+  transform: scale(1);
+}
+
+.grid-1 > article img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 20px;
+}
+
+.grid-1 > article:hover {
+  transform: rotate(5deg);
+  /**transform: scale(1,2);/**zoom out**/
+  /**transform: scale(1,2);**/
+  /**transform: translate(50px); /**geser**/
+}
+
+@media (max-width:1200px) {
+  .grid-1 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 2));
+  }
+}
+
+@media (max-width:768px) {
+  .grid-1 {
     grid-template-columns: 1fr;
   }
 }
